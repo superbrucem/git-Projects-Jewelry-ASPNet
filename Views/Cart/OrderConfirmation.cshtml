@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<div class="container cart-page-container">
+    <div class="text-center my-5">
+        <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+        <h1 class="mt-4">THANK YOU FOR YOUR ORDER!</h1>
+        <p class="lead">Your order has been placed successfully.</p>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        @if (TempData["PayPalMessage"] != null)
+        {
+            <div class="alert alert-info">
+                @TempData["PayPalMessage"]
+                @if (TempData["TransactionId"] != null)
+                {
+                    <div class="mt-2">
+                        <small>Transaction ID: @TempData["TransactionId"]</small>
+                    </div>
+                }
+            </div>
+        }
+
+        <div class="card mt-4 mb-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">ORDER DETAILS</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                        <p><strong>Order Number:</strong><br> @(TempData["OrderId"] ?? "N/A")</p>
+                        <p><strong>Order Date:</strong><br> @DateTime.Now.ToString("MMMM d, yyyy")</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p><strong>Customer:</strong><br> @(TempData["CustomerName"] ?? "N/A")</p>
+                        <p><strong>Email:</strong><br> @(TempData["CustomerEmail"] ?? "N/A")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>We'll send you a confirmation email with your order details shortly.</p>
+
+        <div class="alert alert-info mt-3">
+            <p><strong>Payment Status:</strong> Completed</p>
+            <p class="mb-0">Your payment has been processed successfully.</p>
+        </div>
+
+        <div class="mt-4">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">CONTINUE SHOPPING</a>
+        </div>
+    </div>
+</div>

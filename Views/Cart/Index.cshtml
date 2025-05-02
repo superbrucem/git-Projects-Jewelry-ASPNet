@@ -1,0 +1,94 @@
+@model OttawaOpalShop.Models.ShoppingCart
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<div class="container cart-page-container">
+    <h1 class="mb-4">YOUR SHOPPING CART</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (Model.IsEmpty)
+    {
+        <div class="alert alert-info">
+            Your cart is empty. <a asp-controller="Home" asp-action="Index">Continue shopping</a>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>PRODUCT</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>TOTAL</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="@item.ImageColor me-3" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                        <span class="@(item.IsDarkText ? "text-dark" : "text-white")" style="font-size: 0.8rem;">@item.ImageText</span>
+                                    </div>
+                                    <div>@item.ProductName</div>
+                                </div>
+                            </td>
+                            <td>$@item.Price.ToString("0.00")</td>
+                            <td>
+                                <form asp-action="UpdateCartItem" method="post" class="d-flex align-items-center">
+                                    <input type="hidden" name="itemId" value="@item.Id" />
+                                    <input type="number" name="quantity" value="@item.Quantity" min="1" max="100" class="form-control form-control-sm" style="width: 70px;" />
+                                    <button type="submit" class="btn btn-sm btn-outline-primary ms-2">Update</button>
+                                </form>
+                            </td>
+                            <td>$@item.Total.ToString("0.00")</td>
+                            <td>
+                                <form asp-action="RemoveFromCart" method="post">
+                                    <input type="hidden" name="itemId" value="@item.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>SUBTOTAL:</strong></td>
+                        <td><strong>$@Model.Total.ToString("0.00")</strong></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <div>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">CONTINUE SHOPPING</a>
+                <form asp-action="ClearCart" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-outline-danger">CLEAR CART</button>
+                </form>
+            </div>
+            <div>
+                <a asp-action="Checkout" class="btn btn-primary">PROCEED TO CHECKOUT</a>
+            </div>
+        </div>
+    }
+</div>

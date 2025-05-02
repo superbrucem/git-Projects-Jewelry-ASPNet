@@ -1,0 +1,11 @@
+We need to create the following image files in this directory:
+1. green-diopside-1.jpg
+2. green-diopside-2.jpg
+3. green-diopside-3.jpg
+4. green-diopside-4.jpg
+5. blue-apatite.jpg
+6. neon-apatite.jpg
+7. orange-citrine.jpg
+8. yellow-citrine.jpg
+
+These would typically be actual product images.

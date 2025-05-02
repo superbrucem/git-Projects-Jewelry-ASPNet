@@ -1,0 +1,169 @@
+@{
+    ViewData["Title"] = "Customer Service";
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h1 class="display-4 mb-4 text-center">Customer Service</h1>
+        <p class="lead text-center mb-5">We're committed to providing exceptional service to our valued customers</p>
+        
+        <div class="row mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 service-card">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-gem fa-3x text-primary"></i>
+                        </div>
+                        <h4>Product Quality</h4>
+                        <p>We stand behind the quality of our products. Each opal is carefully selected for its beauty and durability, and all our jewelry is crafted to the highest standards.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 service-card">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-certificate fa-3x text-primary"></i>
+                        </div>
+                        <h4>Authenticity Guarantee</h4>
+                        <p>Every purchase comes with a certificate of authenticity, verifying the origin and quality of your opal. We only sell genuine, natural opals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 service-card">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-tools fa-3x text-primary"></i>
+                        </div>
+                        <h4>Repair Services</h4>
+                        <p>We offer professional repair services for all our jewelry. Our skilled craftsmen can restore your treasured pieces to their original beauty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="mb-4">Frequently Asked Questions</h3>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How do I care for my opal jewelry?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Opals require special care. Avoid exposing them to extreme temperatures, harsh chemicals, or prolonged sunlight. Clean them gently with mild soap and water, and store them separately from other jewelry to prevent scratches.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Do you offer custom designs?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes, we specialize in custom designs. Our experienced designers will work with you to create a unique piece that reflects your personal style and preferences.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        What is your return policy?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We offer a 30-day return policy for most items. Please visit our Shipping & Returns page for complete details.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a asp-area="" asp-controller="Home" asp-action="FAQ" class="btn btn-outline-primary">View All FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="mb-4">Contact Customer Service</h3>
+                        <p>Our customer service team is available to assist you with any questions or concerns.</p>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-phone text-primary me-2"></i> Phone Support</h5>
+                            <p class="ms-4 mb-0">+1 (613) 555-1234</p>
+                            <p class="ms-4 mb-0 text-muted">Monday - Friday: 9:00 AM - 8:00 PM</p>
+                            <p class="ms-4 mb-0 text-muted">Saturday - Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-envelope text-primary me-2"></i> Email Support</h5>
+                            <p class="ms-4 mb-0">Ottawa_Opal_Shop@hotmail.com</p>
+                            <p class="ms-4 mb-0 text-muted">We respond to all emails within 24 hours</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-comments text-primary me-2"></i> Live Chat</h5>
+                            <p class="ms-4 mb-0">Available on our website during business hours</p>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a asp-area="" asp-controller="Home" asp-action="Contact" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body text-center py-4">
+                        <h3 class="mb-3">Our Customer Service Promise</h3>
+                        <p class="lead mb-0">We are dedicated to providing exceptional service and ensuring your complete satisfaction with every purchase. If you're not completely satisfied with your experience, please let us know, and we'll make it right.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .service-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .service-icon {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        background-color: #e8eaf6;
+        color: #3f51b5;
+    }
+    
+    .accordion-button:focus {
+        box-shadow: 0 0 0 0.25rem rgba(63, 81, 181, 0.25);
+    }
+</style>

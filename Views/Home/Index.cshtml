@@ -1,0 +1,24 @@
+﻿@model OttawaOpalShop.Models.ProductViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h1 class="display-4 mb-4 text-center">WELCOME TO OTTAWA OPAL SHOP</h1>
+        <p class="lead text-center mb-5">DISCOVER OUR EXQUISITE COLLECTION OF PREMIUM OPAL JEWELRY</p>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card welcome-card">
+                    <div class="card-body text-center py-5">
+                        <h2 class="mb-4">FEATURED PRODUCTS</h2>
+                        <p class="mb-4">BROWSE OUR SELECTION OF HANDCRAFTED OPAL JEWELRY, EACH PIECE UNIQUELY DESIGNED TO SHOWCASE THE NATURAL BEAUTY OF THESE REMARKABLE GEMSTONES.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <partial name="_ProductGrid" model="Model" />
+    </div>
+</div>

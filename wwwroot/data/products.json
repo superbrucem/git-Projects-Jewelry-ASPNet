@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "1.00 MM ROUND 100 PIECES BRILLIANT AAA+ NATURAL CHROME GREEN DIOPSIDE [FLAWLESS-VVS]",
+      "description": "High quality natural chrome green diopside gemstones with brilliant cut.",
+      "price": 8.99,
+      "imageColor": "bg-secondary",
+      "imageText": "GREEN DIOPSIDE",
+      "isDarkText": false,
+      "category": "Collections",
+      "tags": ["green", "diopside", "chrome", "brilliant", "natural", "round", "flawless"]
+    },
+    {
+      "id": 2,
+      "name": "1.40 MM ROUND 70 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]",
+      "description": "Premium unheated chrome green diopside gemstones with excellent clarity.",
+      "price": 11.99,
+      "imageColor": "bg-secondary",
+      "imageText": "GREEN DIOPSIDE",
+      "isDarkText": false,
+      "category": "Collections",
+      "tags": ["green", "diopside", "chrome", "unheated", "natural", "round", "flawless"]
+    },
+    {
+      "id": 3,
+      "name": "1.50 MM ROUND MACHINE CUT 70 PCS AAA LUSTER NATURAL INTENSE ICE BLUE APATITE [VVS]-AAA GRADE",
+      "description": "Stunning ice blue apatite gemstones with exceptional luster and clarity.",
+      "price": 12.99,
+      "imageColor": "bg-primary",
+      "imageText": "BLUE APATITE",
+      "isDarkText": false,
+      "category": "Collections",
+      "tags": ["blue", "apatite", "ice", "machine cut", "natural", "round", "luster", "AAA grade"]
+    },
+    {
+      "id": 4,
+      "name": "1.50 MM ROUND MACHINE CUT 70 PCS AAA LUSTER NATURAL NEON GREEN BLUE APATITE [VVS]-AAA GRADE",
+      "description": "Vibrant neon green-blue apatite gemstones with excellent cut and clarity.",
+      "price": 12.99,
+      "imageColor": "bg-info",
+      "imageText": "NEON GREEN BLUE APATITE",
+      "isDarkText": true,
+      "category": "Collections",
+      "tags": ["neon", "green", "blue", "apatite", "machine cut", "natural", "round", "luster", "AAA grade"]
+    },
+    {
+      "id": 5,
+      "name": "1.50 MM ROUND 70 PCS AAA LUSTER NATURAL GOLDEN ORANGE CITRINE [FLAWLESS-VVS]",
+      "description": "Radiant golden orange citrine gemstones with exceptional clarity and color.",
+      "price": 6.99,
+      "imageColor": "bg-warning",
+      "imageText": "ORANGE CITRINE",
+      "isDarkText": false,
+      "category": "Signature",
+      "tags": ["orange", "citrine", "golden", "natural", "round", "luster", "flawless"]
+    },
+    {
+      "id": 6,
+      "name": "1.50 MM ROUND 60 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]",
+      "description": "Premium unheated chrome green diopside gemstones with excellent clarity.",
+      "price": 11.99,
+      "imageColor": "bg-success",
+      "imageText": "GREEN DIOPSIDE",
+      "isDarkText": false,
+      "category": "Signature",
+      "tags": ["green", "diopside", "chrome", "unheated", "natural", "round", "flawless"]
+    },
+    {
+      "id": 7,
+      "name": "1.60 MM ROUND 70 PCS AAA LUSTER NATURAL GOLDEN YELLOW CITRINE [FLAWLESS-VVS]",
+      "description": "Brilliant golden yellow citrine gemstones with exceptional clarity and luster.",
+      "price": 4.99,
+      "imageColor": "bg-warning",
+      "imageText": "YELLOW CITRINE",
+      "isDarkText": true,
+      "category": "Featured",
+      "tags": ["yellow", "citrine", "golden", "natural", "round", "luster", "flawless"]
+    },
+    {
+      "id": 8,
+      "name": "1.70-1.80 MM ROUND 40 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]",
+      "description": "Large size premium unheated chrome green diopside gemstones with excellent clarity.",
+      "price": 11.99,
+      "imageColor": "bg-success",
+      "imageText": "GREEN DIOPSIDE",
+      "isDarkText": false,
+      "category": "Featured",
+      "tags": ["green", "diopside", "chrome", "unheated", "natural", "round", "flawless"]
+    }
+  ]
+}

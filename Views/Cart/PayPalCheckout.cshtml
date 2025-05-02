@@ -1,0 +1,96 @@
+@model OttawaOpalShop.Models.ShoppingCart
+@{
+    ViewData["Title"] = "PayPal Checkout";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" height="40" />
+                    <h4 class="mt-2 mb-0">SECURE CHECKOUT</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="spinner-border text-primary mb-3" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <h5>CONNECTING TO PAYPAL...</h5>
+                        <p class="text-muted">Please wait while we connect you to PayPal's secure payment system.</p>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">ORDER SUMMARY</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span>$@Model.Total.ToString("0.00")</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Shipping:</span>
+                                <span>FREE</span>
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span>$@Model.Total.ToString("0.00")</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulated PayPal Login Form -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">PAYPAL LOGIN</h5>
+                        </div>
+                        <div class="card-body">
+                            <form asp-action="CompletePayPalPayment" method="post" id="paypal-form">
+                                <div class="mb-3">
+                                    <label class="form-label">EMAIL</label>
+                                    <input type="email" class="form-control" value="@TempData["CustomerEmail"]" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">PASSWORD</label>
+                                    <input type="password" class="form-control" value="••••••••" readonly>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        COMPLETE PAYMENT
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <small class="text-muted">
+                            This is a simulated PayPal checkout page for demonstration purposes.
+                            In a real implementation, you would be redirected to the actual PayPal website.
+                        </small>
+                    </div>
+                </div>
+                <div class="card-footer bg-light text-center py-3">
+                    <small class="text-muted">
+                        <i class="fas fa-lock me-1"></i> Secure Transaction
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-submit the form after a short delay to simulate PayPal processing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide the spinner after 3 seconds
+            setTimeout(function() {
+                document.querySelector('.spinner-border').style.display = 'none';
+                document.querySelector('h5').textContent = 'CONNECTED TO PAYPAL';
+                document.querySelector('p.text-muted').textContent = 'Please complete your payment below.';
+            }, 3000);
+        });
+    </script>
+}

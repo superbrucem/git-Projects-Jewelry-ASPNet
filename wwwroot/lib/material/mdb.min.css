@@ -1,0 +1,235 @@
+/* Material Design for Bootstrap 5
+ * This is a simplified version of the MDB CSS for demonstration purposes
+ * For a full version, please download from the official website or use the CDN
+ */
+
+:root {
+  --mdb-primary: #6a0dad;
+  --mdb-secondary: #f3e5f5;
+  --mdb-success: #00c851;
+  --mdb-info: #33b5e5;
+  --mdb-warning: #ffbb33;
+  --mdb-danger: #ff3547;
+  --mdb-light: #f8f9fa;
+  --mdb-dark: #212121;
+  --mdb-white: #fff;
+  --mdb-black: #000;
+  --mdb-primary-rgb: 106, 13, 173;
+  --mdb-secondary-rgb: 243, 229, 245;
+  --mdb-success-rgb: 0, 200, 81;
+  --mdb-info-rgb: 51, 181, 229;
+  --mdb-warning-rgb: 255, 187, 51;
+  --mdb-danger-rgb: 255, 53, 71;
+  --mdb-light-rgb: 248, 249, 250;
+  --mdb-dark-rgb: 33, 33, 33;
+  --mdb-white-rgb: 255, 255, 255;
+  --mdb-black-rgb: 0, 0, 0;
+}
+
+/* Material Design Shadows */
+.shadow-1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.shadow-2 {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-3 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.shadow-4 {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.shadow-5 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21) !important;
+}
+
+/* Material Design Buttons */
+.btn {
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--mdb-primary) !important;
+  color: var(--mdb-white) !important;
+}
+
+.btn-secondary {
+  background-color: var(--mdb-secondary) !important;
+  color: var(--mdb-dark) !important;
+}
+
+.btn-success {
+  background-color: var(--mdb-success) !important;
+  color: var(--mdb-white) !important;
+}
+
+.btn-info {
+  background-color: var(--mdb-info) !important;
+  color: var(--mdb-white) !important;
+}
+
+.btn-warning {
+  background-color: var(--mdb-warning) !important;
+  color: var(--mdb-dark) !important;
+}
+
+.btn-danger {
+  background-color: var(--mdb-danger) !important;
+  color: var(--mdb-white) !important;
+}
+
+.btn-light {
+  background-color: var(--mdb-light) !important;
+  color: var(--mdb-dark) !important;
+}
+
+.btn-dark {
+  background-color: var(--mdb-dark) !important;
+  color: var(--mdb-white) !important;
+}
+
+/* Material Design Cards */
+.card {
+  border: 0;
+  font-weight: 400;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  color: #747373;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Material Design Navbar */
+.navbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  font-weight: 300;
+}
+
+.navbar-brand {
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 400;
+}
+
+/* Material Design Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+.display-1, .display-2, .display-3, .display-4 {
+  font-weight: 300;
+}
+
+/* Material Design Form Controls */
+.form-control {
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #ced4da;
+  padding: 0.375rem 0.75rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--mdb-primary);
+}
+
+/* Material Design Ripple Effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: .2;
+  transition: 0s;
+}
+
+/* Material Design Footer */
+footer {
+  background-color: var(--mdb-light);
+  color: var(--mdb-dark);
+}
+
+/* Material Design Utilities */
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+.z-depth-1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.z-depth-2 {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.z-depth-3 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.z-depth-4 {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.z-depth-5 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21) !important;
+}
