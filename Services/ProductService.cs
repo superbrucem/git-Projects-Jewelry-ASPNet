@@ -8,7 +8,7 @@ using OttawaOpalShop.Models;
 
 namespace OttawaOpalShop.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private List<Product> _products = new List<Product>();
@@ -35,7 +35,8 @@ namespace OttawaOpalShop.Services
                     IsDarkText = false,
                     Category = "Collections",
                     Tags = new List<string> { "green", "diopside", "chrome", "brilliant", "natural", "round", "flawless" },
-                    StockQuantity = 25
+                    StockQuantity = 25,
+                    VideoUrl = "https://youtu.be/dQw4w9WgXcQ"
                 },
                 new Product
                 {
@@ -87,7 +88,8 @@ namespace OttawaOpalShop.Services
                     IsDarkText = false,
                     Category = "Signature",
                     Tags = new List<string> { "orange", "citrine", "golden", "natural", "round", "luster", "flawless" },
-                    StockQuantity = 30
+                    StockQuantity = 30,
+                    VideoUrl = "https://youtu.be/dQw4w9WgXcQ"
                 },
                 new Product
                 {

@@ -1,0 +1,356 @@
+@model OttawaOpalShop.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-md-6 mb-4">
+                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="@Model.ImageColor product-detail-image d-flex align-items-center justify-content-center">
+                                <span class="@(Model.IsDarkText ? "text-dark" : "text-white") product-image-text">@Model.ImageText</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="@Model.ImageColor product-detail-image d-flex align-items-center justify-content-center" style="filter: brightness(1.2);">
+                                <span class="@(Model.IsDarkText ? "text-dark" : "text-white") product-image-text">@Model.ImageText</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- Thumbnail Navigation -->
+                <div class="row mt-3">
+                    <div class="col-3">
+                        <div class="thumbnail-image active @Model.ImageColor" data-bs-target="#productCarousel" data-bs-slide-to="0">
+                            <span class="@(Model.IsDarkText ? "text-dark" : "text-white") thumbnail-text">@Model.ImageText</span>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="thumbnail-image @Model.ImageColor" style="filter: brightness(1.2);" data-bs-target="#productCarousel" data-bs-slide-to="1">
+                            <span class="@(Model.IsDarkText ? "text-dark" : "text-white") thumbnail-text">@Model.ImageText</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <h1 class="product-detail-title">@Model.Name</h1>
+                <div class="product-detail-price mb-4">$@Model.Price.ToString("0.00")</div>
+
+                <div class="product-detail-description mb-4">
+                    <p>@Model.Description</p>
+                </div>
+
+                <!-- Stock Status -->
+                @if (Model.IsInStock)
+                {
+                    <div class="stock-status mb-4">
+                        <span class="in-stock"><i class="fas fa-check-circle"></i> IN STOCK</span>
+                        <span class="stock-quantity">(@Model.StockQuantity available)</span>
+                    </div>
+
+                    <!-- Add to Cart Form -->
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post" class="add-to-cart-form">
+                        <input type="hidden" name="productId" value="@Model.Id" />
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+
+                        <div class="form-group mb-4">
+                            <label for="quantity" class="form-label">QUANTITY:</label>
+                            <div class="quantity-selector-detail">
+                                <button type="button" class="btn btn-outline-secondary quantity-decrease">-</button>
+                                <input type="number" name="quantity" id="quantity" value="1" min="1" max="@Model.StockQuantity"
+                                       class="form-control text-center quantity-input" />
+                                <button type="button" class="btn btn-outline-secondary quantity-increase">+</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger btn-lg w-100 add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> ADD TO CART
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <div class="stock-status mb-4">
+                        <span class="out-of-stock"><i class="fas fa-times-circle"></i> OUT OF STOCK</span>
+                    </div>
+
+                    <button class="btn btn-secondary btn-lg w-100" disabled>
+                        <i class="fas fa-shopping-cart"></i> OUT OF STOCK
+                    </button>
+                }
+
+                <!-- Product Features -->
+                <div class="product-features mt-5">
+                    <h4>PRODUCT FEATURES</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-gem"></i> Premium Quality Gemstone</li>
+                        <li><i class="fas fa-certificate"></i> Certified Authenticity</li>
+                        <li><i class="fas fa-shipping-fast"></i> Free Shipping</li>
+                        <li><i class="fas fa-undo"></i> 30-Day Returns</li>
+                    </ul>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.VideoUrl))
+                {
+                    <!-- Product Video Section -->
+                    <div class="product-video mt-5">
+                        <h4>PRODUCT VIDEO</h4>
+                        <div class="video-container mt-3">
+                            @{
+                                var videoId = string.Empty;
+                                // Extract YouTube video ID from URL
+                                if (Model.VideoUrl.Contains("youtu.be/"))
+                                {
+                                    videoId = Model.VideoUrl.Split(new[] { "youtu.be/" }, StringSplitOptions.None)[1];
+                                }
+                                else if (Model.VideoUrl.Contains("youtube.com/watch?v="))
+                                {
+                                    videoId = Model.VideoUrl.Split(new[] { "v=" }, StringSplitOptions.None)[1];
+                                    if (videoId.Contains("&"))
+                                    {
+                                        videoId = videoId.Split('&')[0];
+                                    }
+                                }
+                            }
+
+                            @if (!string.IsNullOrEmpty(videoId))
+                            {
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/@videoId"
+                                            title="@Model.Name"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div class="video-caption mt-2">
+                                    Watch this video to learn more about this product and see it in action.
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Product Detail Styles */
+    .product-detail-image {
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    .thumbnail-image {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .thumbnail-image.active,
+    .thumbnail-image:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .thumbnail-text {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .product-detail-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 0.05em;
+    }
+
+    .product-detail-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #f44336;
+    }
+
+    .product-detail-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .stock-status {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .in-stock {
+        color: #4caf50;
+    }
+
+    .out-of-stock {
+        color: #f44336;
+    }
+
+    .stock-quantity {
+        color: #666;
+        margin-left: 10px;
+    }
+
+    /* Quantity Selector */
+    .quantity-selector-detail {
+        display: flex;
+        align-items: center;
+        max-width: 150px;
+    }
+
+    .quantity-selector-detail .quantity-input {
+        text-align: center;
+        font-weight: 600;
+        height: 45px;
+    }
+
+    .quantity-selector-detail .btn {
+        height: 45px;
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    /* Product Features */
+    .product-features {
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 15px 0 0;
+    }
+
+    .feature-list li {
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+
+    .feature-list li i {
+        color: #3f51b5;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+    }
+
+    /* Video Section Styles */
+    .product-video h4 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .video-container {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .video-caption {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+        font-style: italic;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize quantity controls
+            const decreaseBtn = document.querySelector('.quantity-decrease');
+            const increaseBtn = document.querySelector('.quantity-increase');
+            const quantityInput = document.querySelector('.quantity-input');
+
+            if (decreaseBtn && increaseBtn && quantityInput) {
+                decreaseBtn.addEventListener('click', function() {
+                    const currentValue = parseInt(quantityInput.value);
+                    if (currentValue > parseInt(quantityInput.min)) {
+                        quantityInput.value = currentValue - 1;
+                    }
+                });
+
+                increaseBtn.addEventListener('click', function() {
+                    const currentValue = parseInt(quantityInput.value);
+                    const maxValue = parseInt(quantityInput.max);
+                    if (currentValue < maxValue) {
+                        quantityInput.value = currentValue + 1;
+                    }
+                });
+
+                quantityInput.addEventListener('change', function() {
+                    const minValue = parseInt(this.min);
+                    const maxValue = parseInt(this.max);
+                    let currentValue = parseInt(this.value);
+
+                    if (isNaN(currentValue) || currentValue < minValue) {
+                        this.value = minValue;
+                    } else if (currentValue > maxValue) {
+                        this.value = maxValue;
+                    }
+                });
+            }
+
+            // Initialize thumbnail navigation
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const slideIndex = this.getAttribute('data-bs-slide-to');
+                    const carousel = new bootstrap.Carousel(document.getElementById('productCarousel'));
+                    carousel.to(parseInt(slideIndex));
+
+                    // Update active state
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Update thumbnail active state when carousel slides
+            const productCarousel = document.getElementById('productCarousel');
+            if (productCarousel) {
+                productCarousel.addEventListener('slid.bs.carousel', function(e) {
+                    const slideIndex = e.to;
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    const activeThumb = document.querySelector(`.thumbnail-image[data-bs-slide-to="${slideIndex}"]`);
+                    if (activeThumb) {
+                        activeThumb.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+}

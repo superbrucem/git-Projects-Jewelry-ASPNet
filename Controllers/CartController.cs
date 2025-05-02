@@ -9,11 +9,11 @@ namespace OttawaOpalShop.Controllers
     public class CartController : Controller
     {
         private readonly ShoppingCartService _cartService;
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
         private readonly ILogger<CartController> _logger;
         private readonly PayPalService _paypalService;
 
-        public CartController(ShoppingCartService cartService, ProductService productService, ILogger<CartController> logger, PayPalService paypalService)
+        public CartController(ShoppingCartService cartService, IProductService productService, ILogger<CartController> logger, PayPalService paypalService)
         {
             _cartService = cartService;
             _productService = productService;

@@ -9,10 +9,10 @@ namespace OttawaOpalShop.Services
     public class ShoppingCartService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
         private readonly string _cartSessionKey = "ShoppingCart";
 
-        public ShoppingCartService(IHttpContextAccessor httpContextAccessor, ProductService productService)
+        public ShoppingCartService(IHttpContextAccessor httpContextAccessor, IProductService productService)
         {
             _httpContextAccessor = httpContextAccessor;
             _productService = productService;
@@ -22,14 +22,14 @@ namespace OttawaOpalShop.Services
         {
             var session = _httpContextAccessor.HttpContext.Session;
             var cartJson = session.GetString(_cartSessionKey);
-            
+
             if (string.IsNullOrEmpty(cartJson))
             {
                 var cart = new ShoppingCart();
                 SaveCart(cart);
                 return cart;
             }
-            
+
             return JsonSerializer.Deserialize<ShoppingCart>(cartJson) ?? new ShoppingCart();
         }
 
@@ -45,19 +45,19 @@ namespace OttawaOpalShop.Services
         {
             var cart = GetCart();
             var product = _productService.GetProductById(productId);
-            
+
             if (product == null)
             {
                 throw new ArgumentException($"Product with ID {productId} not found.");
             }
-            
+
             if (product.StockQuantity < quantity)
             {
                 throw new InvalidOperationException($"Not enough stock available. Only {product.StockQuantity} items left.");
             }
-            
+
             var existingItem = cart.Items.FirstOrDefault(i => i.ProductId == productId);
-            
+
             if (existingItem != null)
             {
                 // Check if we have enough stock for the increased quantity
@@ -65,7 +65,7 @@ namespace OttawaOpalShop.Services
                 {
                     throw new InvalidOperationException($"Not enough stock available. Only {product.StockQuantity} items left.");
                 }
-                
+
                 existingItem.Quantity += quantity;
             }
             else
@@ -83,7 +83,7 @@ namespace OttawaOpalShop.Services
                     DateAdded = DateTime.Now
                 });
             }
-            
+
             SaveCart(cart);
         }
 
@@ -91,30 +91,30 @@ namespace OttawaOpalShop.Services
         {
             var cart = GetCart();
             var item = cart.Items.FirstOrDefault(i => i.Id == itemId);
-            
+
             if (item == null)
             {
                 throw new ArgumentException($"Cart item with ID {itemId} not found.");
             }
-            
+
             var product = _productService.GetProductById(item.ProductId);
-            
+
             if (product == null)
             {
                 throw new ArgumentException($"Product with ID {item.ProductId} not found.");
             }
-            
+
             if (product.StockQuantity < quantity)
             {
                 throw new InvalidOperationException($"Not enough stock available. Only {product.StockQuantity} items left.");
             }
-            
+
             if (quantity <= 0)
             {
                 RemoveFromCart(itemId);
                 return;
             }
-            
+
             item.Quantity = quantity;
             SaveCart(cart);
         }
@@ -123,7 +123,7 @@ namespace OttawaOpalShop.Services
         {
             var cart = GetCart();
             var item = cart.Items.FirstOrDefault(i => i.Id == itemId);
-            
+
             if (item != null)
             {
                 cart.Items.Remove(item);
@@ -142,18 +142,18 @@ namespace OttawaOpalShop.Services
         {
             var cart = GetCart();
             var allInStock = true;
-            
+
             foreach (var item in cart.Items)
             {
                 var product = _productService.GetProductById(item.ProductId);
-                
+
                 if (product == null || product.StockQuantity < item.Quantity)
                 {
                     allInStock = false;
                     break;
                 }
             }
-            
+
             return allInStock;
         }
     }

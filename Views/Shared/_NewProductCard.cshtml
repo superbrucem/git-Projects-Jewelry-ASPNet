@@ -1,0 +1,74 @@
+@model OttawaOpalShop.Models.Product
+
+<div class="col-md-3 col-lg-3 mb-4 product-card-container">
+    <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id" class="product-card-link">
+        <div class="card h-100 new-product-card">
+            <!-- Product Image with Carousel -->
+            <div class="product-image-container">
+                <!-- Default Image -->
+                <div class="default-image @Model.ImageColor new-product-image d-flex align-items-center justify-content-center">
+                    <span class="@(Model.IsDarkText ? "text-dark" : "text-white") product-image-text">@Model.ImageText</span>
+                </div>
+
+                <!-- Image Carousel (shown on hover) -->
+                <div class="product-carousel">
+                    <div id="carousel-@Model.Id" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="@Model.ImageColor carousel-image d-flex align-items-center justify-content-center">
+                                    <span class="@(Model.IsDarkText ? "text-dark" : "text-white") product-image-text">@Model.ImageText</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="@Model.ImageColor carousel-image d-flex align-items-center justify-content-center" style="filter: brightness(1.2);">
+                                    <span class="@(Model.IsDarkText ? "text-dark" : "text-white") product-image-text">@Model.ImageText</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-@Model.Id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-@Model.Id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick View Button -->
+                <div class="quick-view-button">
+                    <span class="btn btn-sm btn-light quick-view-btn">
+                        <i class="fas fa-search"></i> QUICK VIEW
+                    </span>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="card-body new-product-body">
+                <!-- Product Title with Hover Description -->
+                <div class="product-title-container">
+                    <h5 class="new-product-title" title="@Model.Description">@Model.Name</h5>
+                    <div class="product-description-tooltip">@Model.Description</div>
+                </div>
+
+                <!-- Product Price -->
+                <div class="new-product-price">$@Model.Price.ToString("0.00")</div>
+
+                <!-- Stock Status Badge -->
+                @if (Model.IsInStock)
+                {
+                    <div class="stock-status-badge in-stock">
+                        <i class="fas fa-check-circle"></i> IN STOCK
+                    </div>
+                }
+                else
+                {
+                    <div class="stock-status-badge out-of-stock">
+                        <i class="fas fa-times-circle"></i> OUT OF STOCK
+                    </div>
+                }
+            </div>
+        </div>
+    </a>
+</div>

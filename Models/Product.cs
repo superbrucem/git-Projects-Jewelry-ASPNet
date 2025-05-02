@@ -16,6 +16,7 @@ namespace OttawaOpalShop.Models
         public List<string> Tags { get; set; } = new List<string>(); // For search functionality
         public int StockQuantity { get; set; } = 0; // Available stock quantity
         public bool IsInStock => StockQuantity > 0;
+        public string? VideoUrl { get; set; } // YouTube video URL for product demonstration
     }
 
     public class ProductViewModel
