@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/OttawaOpalShop.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <div class="page-content-wrapper">
         <!-- Top Announcement Bar -->
@@ -27,145 +31,243 @@
             </div>
         </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container">
-            <div class="row align-items-center py-3">
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="container">
+                <div class="row align-items-center py-3">
+                    <div class="col-md-2">
+                        <h1 class="shop-logo mb-0">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">OTTAWA OPAL SHOP</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-8 d-flex justify-content-end">
+                        <div class="search-box" style="max-width: 80%;">
+                            <form asp-controller="Home" asp-action="Search" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="query" class="form-control" placeholder="SEARCH THE STORE"
+                                        aria-label="Search">
+                                    <button class="btn btn-search" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                        @await Component.InvokeAsync("CartSummary")
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">HOME</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Collections"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Collections" ? "active" : "")">COLLECTIONS</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Signature"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Signature" ? "active" : "")">SIGNATURE</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Videos"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Videos" ? "active" : "")">VIDEOS</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "About" ? "active" : "")">ABOUT</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">CONTACT</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Testimonials"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Testimonials" ? "active" : "")">TESTIMONIALS</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="CustomerService"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "CustomerService" ? "active" : "")">CUSTOMER
+                            SERVICE</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ShippingReturns"
+                            class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "ShippingReturns" ? "active" : "")">SHIPPING
+                            & RETURNS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Notification Area -->
+        <div class="container mt-3">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Sidebar -->
                 <div class="col-md-2">
-                    <h1 class="shop-logo mb-0">
-                        <a asp-area="" asp-controller="Home" asp-action="Index">OTTAWA OPAL SHOP</a>
-                    </h1>
-                </div>
-                <div class="col-md-8 d-flex justify-content-end">
-                    <div class="search-box" style="max-width: 80%;">
-                        <form asp-controller="Home" asp-action="Search" method="get">
-                            <div class="input-group">
-                                <input type="text" name="query" class="form-control" placeholder="SEARCH THE STORE" aria-label="Search">
-                                <button class="btn btn-search" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
+                    <div class="sidebar-container">
+                        <div class="sidebar-section">
+                            <div class="sidebar-header">
+                                <h3>COLLECTIONS</h3>
                             </div>
-                        </form>
+                            <div class="sidebar-content">
+                                <ul class="sidebar-list">
+
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL GEMSTONE A-M</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Apatite">APATITE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Amethyst-Ametrine">AMETHYST & AMETRINE</a>
+                                            </li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Aquamarine">AQUAMARINE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Beryl">BERYL</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Chrome-Diopside-Iolite">CHROME DIOPSIDE -
+                                                    IOLITE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Citrine">CITRINE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Goshenite">GOSHENITE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Heliodor">HELIODOR</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Diaspore">DIASPORE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Green-Amethyst">GREEN AMETHYST</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Kunzite">KUNZITE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Morganite">MORGANITE</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL GEMSTONE N-Z</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Peridot">PERIDOT</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Spinel">SPINEL</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Tanzanite">TANZANITE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Tourmaline">TOURMALINE</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Zircon">ZIRCON</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Tourmaline-Pink">- Pink</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Tourmaline-Green-Yellow">Green & Yellow</a>
+                                            </li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Zircon-Blue-White">Blue & White</a></li>
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Zircon-Orange-Yellow">Orange & Yellow</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL GARNET</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL SAPPHIRE</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL TOPAZ - QUARTZ</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">NATURAL DIAMOND</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Collections"
+                                                    asp-route-category="Collections"
+                                                    asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                        <a href="#">SIGNATURE</a>
+                                        <ul class="submenu">
+                                            <li><a asp-controller="Home" asp-action="Signature"
+                                                    asp-route-category="Signature" asp-route-subcategory="5Elements">5
+                                                    ELEMENTS</a></li>
+                                            <li><a asp-controller="Home" asp-action="Signature"
+                                                    asp-route-category="Signature"
+                                                    asp-route-subcategory="GreekGods">GREEK GODS</a></li>
+                                            <li><a asp-controller="Home" asp-action="Signature"
+                                                    asp-route-category="Signature"
+                                                    asp-route-subcategory="Underworld">UNDERWORLD</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
-                <div class="col-md-2 text-end">
-                    @await Component.InvokeAsync("CartSummary")
+
+                <!-- Main Content -->
+                <div class="col-md-10">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- Navigation Menu -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">HOME</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Collections" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Collections" ? "active" : "")">COLLECTIONS</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Signature" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Signature" ? "active" : "")">SIGNATURE</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Videos" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Videos" ? "active" : "")">VIDEOS</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "About" ? "active" : "")">ABOUT</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">CONTACT</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Testimonials" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Testimonials" ? "active" : "")">TESTIMONIALS</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="CustomerService" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "CustomerService" ? "active" : "")">CUSTOMER SERVICE</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ShippingReturns" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "ShippingReturns" ? "active" : "")">SHIPPING & RETURNS</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Notification Area -->
-    <div class="container mt-3">
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                @TempData["SuccessMessage"]
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        }
-
-        @if (TempData["ErrorMessage"] != null)
-        {
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                @TempData["ErrorMessage"]
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        }
-    </div>
-
-    <!-- Main Content -->
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-2">
-                <div class="sidebar-container">
-                    <div class="sidebar-section">
-                        <div class="sidebar-header">
-                            <h3>COLLECTIONS</h3>
-                        </div>
-                        <div class="sidebar-content">
-                            <ul class="sidebar-list">
-
-                                <li class="has-submenu">
-                                    <a href="#">NATURAL GEMSTONE A-M</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">NATURAL GEMSTONE N-Z</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-                              <li class="has-submenu">
-                                    <a href="#">NATURAL GARNET</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-              <li class="has-submenu">
-                                    <a href="#">NATURAL SAPPHIRE</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-<li class="has-submenu">
-                                    <a href="#">NATURAL TOPAZ - QUARTZ</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-<li class="has-submenu">
-                                    <a href="#">NATURAL DIAMOND</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Collections" asp-route-category="Collections" asp-route-subcategory="Quartz-Lemon">LEMON</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="has-submenu">
-                                    <a href="#">SIGNATURE</a>
-                                    <ul class="submenu">
-                                        <li><a asp-controller="Home" asp-action="Signature" asp-route-category="Signature" asp-route-subcategory="5Elements">5 ELEMENTS</a></li>
-                                        <li><a asp-controller="Home" asp-action="Signature" asp-route-category="Signature" asp-route-subcategory="GreekGods">GREEK GODS</a></li>
-                                        <li><a asp-controller="Home" asp-action="Signature" asp-route-category="Signature" asp-route-subcategory="Underworld">UNDERWORLD</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="col-md-10">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-        </div>
-    </div>
     </div> <!-- End of page-content-wrapper -->
 
     <!-- Footer -->
@@ -190,11 +292,19 @@
                         <div class="col-md-3">
                             <h3 class="footer-title">QUICK LINKS</h3>
                             <ul class="footer-links">
-                                <li><a asp-area="" asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a>
+                                </li>
                                 <li><a href="#">Collections</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="Videos" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Videos" ? "active" : "")">Videos</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="About" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "About" ? "active" : "")">About Us</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="Contact" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">Contact</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Videos"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Videos" ? "active" : "")">Videos</a>
+                                </li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="About"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "About" ? "active" : "")">About
+                                        Us</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Contact"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">Contact</a>
+                                </li>
                             </ul>
                         </div>
 
@@ -202,9 +312,15 @@
                         <div class="col-md-3">
                             <h3 class="footer-title">CUSTOMER SERVICE</h3>
                             <ul class="footer-links">
-                                <li><a asp-area="" asp-controller="Home" asp-action="CustomerService" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "CustomerService" ? "active" : "")">Customer Service</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="ShippingReturns" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "ShippingReturns" ? "active" : "")">Shipping & Returns</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="FAQ" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "FAQ" ? "active" : "")">FAQ</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="CustomerService"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "CustomerService" ? "active" : "")">Customer
+                                        Service</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="ShippingReturns"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "ShippingReturns" ? "active" : "")">Shipping
+                                        & Returns</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="FAQ"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "FAQ" ? "active" : "")">FAQ</a>
+                                </li>
                             </ul>
                         </div>
 
@@ -251,4 +367,5 @@
     <script src="~/js/product-filters.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
