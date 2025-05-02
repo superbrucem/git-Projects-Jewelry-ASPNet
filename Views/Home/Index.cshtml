@@ -5,9 +5,53 @@
 
 <div class="card mb-4">
     <div class="card-body">
-        <h1 class="display-4 mb-4 text-center">WELCOME TO OTTAWA OPAL SHOP</h1>
-        <p class="lead text-center mb-5">DISCOVER OUR EXQUISITE COLLECTION OF PREMIUM OPAL JEWELRY</p>
+        <!-- Carousel -->
+        <div id="bannerCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
 
+            <!-- Slides -->
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                    <img src="~/images/banner/5elements.jpg" class="d-block w-100" alt="5 Elements">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>5 ELEMENTS COLLECTION</h5>
+                        <p>DISCOVER OUR EXCLUSIVE 5 ELEMENTS JEWELRY</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/banner/greekgods.jpg" class="d-block w-100" alt="Greek Gods">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>GREEK GODS COLLECTION</h5>
+                        <p>INSPIRED BY ANCIENT MYTHOLOGY</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/banner/underworld.jpg" class="d-block w-100" alt="Underworld">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>UNDERWORLD COLLECTION</h5>
+                        <p>MYSTERIOUS AND ELEGANT DESIGNS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
         <partial name="_ProductGrid" model="Model" />
     </div>
