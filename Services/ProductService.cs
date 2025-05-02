@@ -36,7 +36,7 @@ namespace OttawaOpalShop.Services
                     Category = "Collections",
                     Tags = new List<string> { "green", "diopside", "chrome", "brilliant", "natural", "round", "flawless" },
                     StockQuantity = 25,
-                    VideoUrl = "https://youtu.be/dQw4w9WgXcQ"
+                    VideoUrl = "https://youtu.be/9E0DrKeRYDc"
                 },
                 new Product
                 {
@@ -89,7 +89,7 @@ namespace OttawaOpalShop.Services
                     Category = "Signature",
                     Tags = new List<string> { "orange", "citrine", "golden", "natural", "round", "luster", "flawless" },
                     StockQuantity = 30,
-                    VideoUrl = "https://youtu.be/dQw4w9WgXcQ"
+                    VideoUrl = "https://youtu.be/uy3B7Mt0WkI"
                 },
                 new Product
                 {

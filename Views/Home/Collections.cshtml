@@ -1,15 +1,10 @@
 @model OttawaOpalShop.Models.ProductViewModel
 @{
     ViewData["Title"] = "Collections";
-    var breadcrumbItems = new List<(string Text, string Url)>
-    {
-        ("COLLECTIONS", Url.Action("Collections", "Home"))
-    };
 }
 
 <div class="card mb-4">
     <div class="card-body">
-        <partial name="_Breadcrumb" model="breadcrumbItems" />
         <h1 class="display-4 mb-4 text-center">COLLECTIONS</h1>
         <p class="lead text-center mb-5">EXPLORE OUR DIVERSE COLLECTION OF PREMIUM OPAL JEWELRY</p>
 

@@ -382,7 +382,9 @@
                                 <li><a asp-area="" asp-controller="Home" asp-action="Index"
                                         class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a>
                                 </li>
-                                <li><a href="#">Collections</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Collections"
+                                        class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Collections" ? "active" : "")">Collections</a>
+                                </li>
                                 <li><a asp-area="" asp-controller="Home" asp-action="Videos"
                                         class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Videos" ? "active" : "")">Videos</a>
                                 </li>
