@@ -12,7 +12,8 @@ builder.Services.AddSession(options =>
 });
 
 // Register services
-builder.Services.AddSingleton<OttawaOpalShop.Services.IProductService, OttawaOpalShop.Services.ProductService>();
+builder.Services.AddSingleton<OttawaOpalShop.Services.IProductService, OttawaOpalShop.Services.ProductXmlService>();
+builder.Services.AddSingleton<OttawaOpalShop.Services.IVideoService, OttawaOpalShop.Services.VideoXmlService>();
 builder.Services.AddScoped<OttawaOpalShop.Services.ShoppingCartService>();
 builder.Services.AddHttpClient<OttawaOpalShop.Services.PayPalService>();
 

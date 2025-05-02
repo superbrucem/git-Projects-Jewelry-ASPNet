@@ -12,7 +12,8 @@ namespace OttawaOpalShop.Models
         public string ImageColor { get; set; } = "bg-secondary"; // For the colored box background
         public string ImageText { get; set; } = string.Empty; // Text to display in the colored box
         public bool IsDarkText { get; set; } // Whether to use dark text on the colored background
-        public string Category { get; set; } = "Uncategorized"; // Collections, Signature, or Featured
+        public List<string> Categories { get; set; } = new List<string>(); // Collections, Signature, Featured, etc.
+        public string Category { get; set; } = "Uncategorized"; // For backward compatibility
         public List<string> Tags { get; set; } = new List<string>(); // For search functionality
         public int StockQuantity { get; set; } = 0; // Available stock quantity
         public bool IsInStock => StockQuantity > 0;

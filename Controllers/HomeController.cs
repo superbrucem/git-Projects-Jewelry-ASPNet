@@ -9,11 +9,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IProductService _productService;
+    private readonly IVideoService _videoService;
 
-    public HomeController(ILogger<HomeController> logger, IProductService productService)
+    public HomeController(ILogger<HomeController> logger, IProductService productService, IVideoService videoService)
     {
         _logger = logger;
         _productService = productService;
+        _videoService = videoService;
     }
 
     public IActionResult Index(int page = 1, string category = "Featured")
@@ -73,9 +75,10 @@ public class HomeController : Controller
         return View(viewModel);
     }
 
-    public IActionResult Videos()
+    public IActionResult Videos(int page = 1, string category = null, string searchQuery = null)
     {
-        return View();
+        var viewModel = _videoService.GetVideoViewModel(category, page, 6, searchQuery);
+        return View(viewModel);
     }
 
     public IActionResult About()

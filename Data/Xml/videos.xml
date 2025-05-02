@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Videos>
+  <Video>
+    <Id>1</Id>
+    <Title>NATURAL OPAL GEMSTONE SHOWCASE - UPDATED</Title>
+    <Description>Explore our stunning collection of natural opals with vibrant play-of-color and exceptional clarity. Now with new footage!</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/dIwJh2G6z-E</VideoUrl>
+    <PublishedDate>2023-06-15T00:00:00</PublishedDate>
+    <ViewCount>15000</ViewCount>
+    <Category>Opals</Category>
+    <IsFeatured>true</IsFeatured>
+  </Video>
+  <Video>
+    <Id>2</Id>
+    <Title>HOW TO IDENTIFY QUALITY GEMSTONES</Title>
+    <Description>Learn the expert techniques for identifying high-quality gemstones and avoiding common pitfalls.</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+    <PublishedDate>2023-07-22T00:00:00</PublishedDate>
+    <ViewCount>8976</ViewCount>
+    <Category>Education</Category>
+    <IsFeatured>false</IsFeatured>
+  </Video>
+  <Video>
+    <Id>3</Id>
+    <Title>CARING FOR YOUR GEMSTONE JEWELRY</Title>
+    <Description>Essential tips and techniques for maintaining the beauty and longevity of your precious gemstone jewelry.</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+    <PublishedDate>2023-08-05T00:00:00</PublishedDate>
+    <ViewCount>6321</ViewCount>
+    <Category>Care</Category>
+    <IsFeatured>false</IsFeatured>
+  </Video>
+  <Video>
+    <Id>4</Id>
+    <Title>RARE GEMSTONES FROM AROUND THE WORLD</Title>
+    <Description>Discover the world's most rare and exotic gemstones from remote mining locations across the globe.</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+    <PublishedDate>2023-09-18T00:00:00</PublishedDate>
+    <ViewCount>15789</ViewCount>
+    <Category>Rare Gems</Category>
+    <IsFeatured>true</IsFeatured>
+  </Video>
+  <Video>
+    <Id>5</Id>
+    <Title>GEMSTONE CUTTING TECHNIQUES</Title>
+    <Description>Watch master lapidaries demonstrate precision cutting techniques that maximize a gemstone's brilliance and value.</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/rjZLSJt2K-A</VideoUrl>
+    <PublishedDate>2023-10-07T00:00:00</PublishedDate>
+    <ViewCount>9432</ViewCount>
+    <Category>Craftsmanship</Category>
+    <IsFeatured>false</IsFeatured>
+  </Video>
+  <Video>
+    <Id>6</Id>
+    <Title>ETHICAL GEMSTONE SOURCING</Title>
+    <Description>Learn about our commitment to ethical sourcing practices and how we ensure our gemstones are conflict-free.</Description>
+    <ThumbnailUrl>https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg</ThumbnailUrl>
+    <VideoUrl>https://youtu.be/dNaIzYvJoPY</VideoUrl>
+    <PublishedDate>2023-11-12T00:00:00</PublishedDate>
+    <ViewCount>7865</ViewCount>
+    <Category>Ethics</Category>
+    <IsFeatured>true</IsFeatured>
+  </Video>
+</Videos>

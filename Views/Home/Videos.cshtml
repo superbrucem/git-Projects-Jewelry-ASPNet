@@ -1,74 +1,157 @@
+@model OttawaOpalShop.Models.VideoViewModel
 @{
     ViewData["Title"] = "Videos";
 }
 
 <div class="card mb-4">
     <div class="card-body">
-        <h1 class="display-4 mb-4 text-center">Opal Videos</h1>
-        <p class="lead text-center mb-5">Watch our collection of videos showcasing the beauty and diversity of opals</p>
+        <h1 class="display-4 mb-4 text-center">OPAL VIDEOS</h1>
+        <p class="lead text-center mb-5">WATCH OUR COLLECTION OF VIDEOS SHOWCASING THE BEAUTY AND DIVERSITY OF OPALS</p>
 
-        <div class="row mb-5">
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-                <h5 class="mt-2">The Beauty of Australian Opals</h5>
-                <p>Discover the stunning colors and patterns of Australian opals, known for their exceptional quality.</p>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-                <h5 class="mt-2">How Opals Are Formed</h5>
-                <p>Learn about the fascinating geological processes that create these magnificent gemstones.</p>
+        <!-- Search and Filter -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <form asp-action="Videos" method="get" class="form-inline justify-content-center">
+                    <div class="input-group w-100">
+                        <input type="text" name="searchQuery" class="form-control" placeholder="Search videos..."
+                            value="@Model.SearchQuery">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i> SEARCH
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mb-5">
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <!-- Video Grid -->
+        <div class="row">
+            @foreach (var video in Model.Videos)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="video-card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            @{
+                                var videoId = string.Empty;
+                                // Extract YouTube video ID from URL
+                                if (video.VideoUrl.Contains("youtu.be/"))
+                                {
+                                    videoId = video.VideoUrl.Split(new[] { "youtu.be/" }, StringSplitOptions.None)[1];
+                                }
+                                else if (video.VideoUrl.Contains("youtube.com/watch?v="))
+                                {
+                                    videoId = video.VideoUrl.Split(new[] { "v=" }, StringSplitOptions.None)[1];
+                                    if (videoId.Contains("&"))
+                                    {
+                                        videoId = videoId.Split('&')[0];
+                                    }
+                                }
+                                else
+                                {
+                                    videoId = "dQw4w9WgXcQ"; // Default video ID
+                                }
+                            }
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@videoId"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">@video.Title</h5>
+                            <p class="video-description">@video.Description</p>
+                            <div class="video-meta">
+                                <span class="video-category">
+                                    <i class="fas fa-tag"></i> @video.Category
+                                </span>
+                                <span class="video-views">
+                                    <i class="fas fa-eye"></i> @video.ViewCount views
+                                </span>
+                                <span class="video-date">
+                                    <i class="fas fa-calendar-alt"></i> @video.PublishedDate.ToString("MMM dd, yyyy")
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h5 class="mt-2">Opal Cutting and Polishing</h5>
-                <p>Watch master craftsmen transform rough opals into brilliant gemstones through cutting and polishing.</p>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-                <h5 class="mt-2">Opal Mining in Australia</h5>
-                <p>Experience the adventure of opal mining in the outback of Australia.</p>
-            </div>
+            }
         </div>
 
-        <div class="row mb-5">
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-                <h5 class="mt-2">Types of Opals Explained</h5>
-                <p>Learn about the different varieties of opals and what makes each one unique.</p>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-                <h5 class="mt-2">Caring for Your Opal Jewelry</h5>
-                <p>Tips and techniques for maintaining the beauty of your opal jewelry for generations.</p>
-            </div>
-        </div>
+        <!-- Pagination -->
+        @if (Model.TotalItems > Model.ItemsPerPage)
+        {
+            <div class="row mt-4">
+                <div class="col-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            @{
+                                int totalPages = (int)Math.Ceiling(Model.TotalItems / (double)Model.ItemsPerPage);
+                                int startPage = Math.Max(1, Model.CurrentPage - 2);
+                                int endPage = Math.Min(totalPages, startPage + 4);
+                            }
 
+                            @if (Model.CurrentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="@Url.Action("Videos", new { page = Model.CurrentPage - 1, category = Model.CategoryName, searchQuery = Model.SearchQuery })"
+                                        aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            }
+
+                            @for (int i = startPage; i <= endPage; i++)
+                            {
+                                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                    <a class="page-link"
+                                        href="@Url.Action("Videos", new { page = i, category = Model.CategoryName, searchQuery = Model.SearchQuery })">@i</a>
+                                </li>
+                            }
+
+                            @if (Model.CurrentPage < totalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="@Url.Action("Videos", new { page = Model.CurrentPage + 1, category = Model.CategoryName, searchQuery = Model.SearchQuery })"
+                                        aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        }
+
+        <!-- Subscribe Section -->
         <div class="text-center mt-5 mb-3">
-            <h3>Subscribe to Our YouTube Channel</h3>
-            <p class="mb-4">Stay updated with our latest videos about opals and jewelry</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-lg">
-                <i class="fab fa-youtube mr-2"></i> Subscribe Now
+            <h3>SUBSCRIBE TO OUR YOUTUBE CHANNEL</h3>
+            <p class="mb-4">STAY UPDATED WITH OUR LATEST VIDEOS ABOUT OPALS AND JEWELRY</p>
+            <a href="@Model.ChannelUrl" target="_blank" class="btn btn-danger btn-lg">
+                <i class="fab fa-youtube mr-2"></i> SUBSCRIBE NOW
             </a>
         </div>
     </div>
 </div>
 
 <style>
+    /* Video Card Styles */
+    .video-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+    }
+
     .embed-responsive {
         position: relative;
         display: block;
@@ -93,13 +176,78 @@
         border: 0;
     }
 
+    .video-info {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    .video-description {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .video-meta {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+        color: #888;
+    }
+
+    .video-meta span {
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+
+    .video-meta i {
+        margin-right: 5px;
+    }
+
+    /* Subscribe Button */
     .btn-danger {
         background-color: #FF0000;
         border-color: #FF0000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
     }
 
     .btn-danger:hover {
         background-color: #CC0000;
         border-color: #CC0000;
+    }
+
+    /* Search Box */
+    .input-group .form-control {
+        border-radius: 4px 0 0 4px;
+        height: 45px;
+    }
+
+    .input-group-append .btn {
+        border-radius: 0 4px 4px 0;
+        height: 45px;
+        text-transform: uppercase;
+    }
+
+    /* Pagination */
+    .pagination .page-link {
+        color: #333;
+        border-color: #ddd;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
     }
 </style>

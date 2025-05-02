@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <!-- Example of a product that is in both Featured and Signature categories -->
+  <Product>
+    <Id>20</Id>
+    <Name>3.00 MM ROUND 25 PIECES PREMIUM RAINBOW MOONSTONE [SPECIAL EDITION]</Name>
+    <Description>Exceptional rainbow moonstone gemstones with stunning adularescence and play of colors. Limited special edition.</Description>
+    <Price>34.99</Price>
+    <ImageColor>bg-info</ImageColor>
+    <ImageText>RAINBOW MOONSTONE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Categories>
+      <Category>Featured</Category>
+    </Categories>
+    <Tags>
+      <Tag>rainbow</Tag>
+      <Tag>moonstone</Tag>
+      <Tag>premium</Tag>
+      <Tag>special edition</Tag>
+      <Tag>limited</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+    </Tags>
+    <StockQuantity>5</StockQuantity>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+  </Product>
+</Products>

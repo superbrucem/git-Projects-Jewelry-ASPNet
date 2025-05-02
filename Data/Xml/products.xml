@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product>
+    <Id>1</Id>
+    <Name>1.00 MM ROUND 100 PIECES BRILLIANT AAA+ NATURAL CHROME GREEN DIOPSIDE [FLAWLESS-VVS] - UPDATED</Name>
+    <Description>High quality natural chrome green diopside gemstones with brilliant cut. Limited stock available!</Description>
+    <Price>9.99</Price>
+    <ImageColor>bg-secondary</ImageColor>
+    <ImageText>GREEN DIOPSIDE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Categories>
+      <Category>Featured</Category>
+    </Categories>
+    <Tags>
+      <Tag>green</Tag>
+      <Tag>diopside</Tag>
+      <Tag>chrome</Tag>
+      <Tag>brilliant</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+      <Tag>limited</Tag>
+    </Tags>
+    <StockQuantity>10</StockQuantity>
+    <VideoUrl>https://youtu.be/9E0DrKeRYDc</VideoUrl>
+  </Product>
+  <Product>
+    <Id>2</Id>
+    <Name>1.40 MM ROUND 70 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]</Name>
+    <Description>Premium unheated chrome green diopside gemstones with excellent clarity.</Description>
+    <Price>11.99</Price>
+    <ImageColor>bg-secondary</ImageColor>
+    <ImageText>GREEN DIOPSIDE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Categories>
+      <Category>Featured</Category>
+    </Categories>
+    <Tags>
+      <Tag>green</Tag>
+      <Tag>diopside</Tag>
+      <Tag>chrome</Tag>
+      <Tag>unheated</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>15</StockQuantity>
+  </Product>
+  <Product>
+    <Id>3</Id>
+    <Name>1.50 MM ROUND MACHINE CUT 70 PCS AAA LUSTER NATURAL INTENSE ICE BLUE APATITE [VVS]-AAA GRADE</Name>
+    <Description>Stunning ice blue apatite gemstones with exceptional luster and clarity.</Description>
+    <Price>12.99</Price>
+    <ImageColor>bg-primary</ImageColor>
+    <ImageText>BLUE APATITE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>blue</Tag>
+      <Tag>apatite</Tag>
+      <Tag>ice</Tag>
+      <Tag>machine cut</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>luster</Tag>
+      <Tag>AAA grade</Tag>
+    </Tags>
+    <StockQuantity>10</StockQuantity>
+  </Product>
+  <Product>
+    <Id>4</Id>
+    <Name>1.50 MM ROUND MACHINE CUT 70 PCS AAA LUSTER NATURAL NEON GREEN BLUE APATITE [VVS]-AAA GRADE</Name>
+    <Description>Vibrant neon green-blue apatite gemstones with excellent cut and clarity.</Description>
+    <Price>12.99</Price>
+    <ImageColor>bg-info</ImageColor>
+    <ImageText>NEON GREEN BLUE APATITE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>neon</Tag>
+      <Tag>green</Tag>
+      <Tag>blue</Tag>
+      <Tag>apatite</Tag>
+      <Tag>machine cut</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>luster</Tag>
+      <Tag>AAA grade</Tag>
+    </Tags>
+    <StockQuantity>5</StockQuantity>
+  </Product>
+  <Product>
+    <Id>5</Id>
+    <Name>1.50 MM ROUND 70 PCS AAA LUSTER NATURAL GOLDEN ORANGE CITRINE [FLAWLESS-VVS]</Name>
+    <Description>Radiant golden orange citrine gemstones with exceptional clarity and color.</Description>
+    <Price>6.99</Price>
+    <ImageColor>bg-warning</ImageColor>
+    <ImageText>ORANGE CITRINE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>orange</Tag>
+      <Tag>citrine</Tag>
+      <Tag>golden</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>luster</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>30</StockQuantity>
+    <VideoUrl>https://youtu.be/KyU7zUGGN7A</VideoUrl>
+  </Product>
+  <Product>
+    <Id>6</Id>
+    <Name>1.50 MM ROUND 60 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]</Name>
+    <Description>Premium unheated chrome green diopside gemstones with excellent clarity.</Description>
+    <Price>11.99</Price>
+    <ImageColor>bg-success</ImageColor>
+    <ImageText>GREEN DIOPSIDE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>green</Tag>
+      <Tag>diopside</Tag>
+      <Tag>chrome</Tag>
+      <Tag>unheated</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>0</StockQuantity>
+  </Product>
+  <Product>
+    <Id>7</Id>
+    <Name>1.60 MM ROUND 70 PCS AAA LUSTER NATURAL GOLDEN YELLOW CITRINE [FLAWLESS-VVS]</Name>
+    <Description>Brilliant golden yellow citrine gemstones with exceptional clarity and luster.</Description>
+    <Price>4.99</Price>
+    <ImageColor>bg-warning</ImageColor>
+    <ImageText>YELLOW CITRINE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Featured</Category>
+    <Tags>
+      <Tag>yellow</Tag>
+      <Tag>citrine</Tag>
+      <Tag>golden</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>luster</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>50</StockQuantity>
+  </Product>
+  <Product>
+    <Id>8</Id>
+    <Name>1.70-1.80 MM ROUND 40 PIECES NATURAL UNHEATED CHROME GREEN DIOPSIDE [FLAWLESS-VVS]</Name>
+    <Description>Large size premium unheated chrome green diopside gemstones with excellent clarity.</Description>
+    <Price>11.99</Price>
+    <ImageColor>bg-success</ImageColor>
+    <ImageText>GREEN DIOPSIDE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Featured</Category>
+    <Tags>
+      <Tag>green</Tag>
+      <Tag>diopside</Tag>
+      <Tag>chrome</Tag>
+      <Tag>unheated</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>8</StockQuantity>
+  </Product>
+  <Product>
+    <Id>9</Id>
+    <Name>2.00 MM ROUND 50 PIECES NATURAL RUBY RED GARNET [FLAWLESS-VVS]</Name>
+    <Description>Exquisite ruby red garnet gemstones with exceptional clarity and brilliance.</Description>
+    <Price>14.99</Price>
+    <ImageColor>bg-danger</ImageColor>
+    <ImageText>RUBY RED GARNET</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>red</Tag>
+      <Tag>garnet</Tag>
+      <Tag>ruby</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>12</StockQuantity>
+  </Product>
+  <Product>
+    <Id>10</Id>
+    <Name>1.80 MM ROUND 60 PIECES NATURAL DEEP BLUE SAPPHIRE [VVS]</Name>
+    <Description>Stunning deep blue sapphire gemstones with excellent clarity and color.</Description>
+    <Price>19.99</Price>
+    <ImageColor>bg-primary</ImageColor>
+    <ImageText>BLUE SAPPHIRE</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>blue</Tag>
+      <Tag>sapphire</Tag>
+      <Tag>deep</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>VVS</Tag>
+    </Tags>
+    <StockQuantity>7</StockQuantity>
+  </Product>
+  <Product>
+    <Id>11</Id>
+    <Name>1.50 MM ROUND 80 PIECES NATURAL PURPLE AMETHYST [AAA GRADE]</Name>
+    <Description>Beautiful purple amethyst gemstones with excellent color saturation.</Description>
+    <Price>9.99</Price>
+    <ImageColor>bg-purple</ImageColor>
+    <ImageText>PURPLE AMETHYST</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>purple</Tag>
+      <Tag>amethyst</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>AAA grade</Tag>
+    </Tags>
+    <StockQuantity>20</StockQuantity>
+  </Product>
+  <Product>
+    <Id>12</Id>
+    <Name>1.20 MM ROUND 90 PIECES NATURAL PINK TOURMALINE [FLAWLESS]</Name>
+    <Description>Delicate pink tourmaline gemstones with exceptional clarity and color.</Description>
+    <Price>15.99</Price>
+    <ImageColor>bg-pink</ImageColor>
+    <ImageText>PINK TOURMALINE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>pink</Tag>
+      <Tag>tourmaline</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>flawless</Tag>
+    </Tags>
+    <StockQuantity>15</StockQuantity>
+  </Product>
+  <Product>
+    <Id>13</Id>
+    <Name>2.50 MM ROUND 30 PIECES NATURAL WHITE MOONSTONE [AAA GRADE]</Name>
+    <Description>Ethereal white moonstone gemstones with beautiful adularescence.</Description>
+    <Price>13.99</Price>
+    <ImageColor>bg-light</ImageColor>
+    <ImageText>WHITE MOONSTONE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Collections</Category>
+    <Tags>
+      <Tag>white</Tag>
+      <Tag>moonstone</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>AAA grade</Tag>
+    </Tags>
+    <StockQuantity>10</StockQuantity>
+  </Product>
+  <Product>
+    <Id>14</Id>
+    <Name>2.00 MM ROUND 40 PIECES NATURAL FIRE OPAL [5 ELEMENTS COLLECTION]</Name>
+    <Description>Vibrant fire opal gemstones from our exclusive 5 Elements Collection.</Description>
+    <Price>24.99</Price>
+    <ImageColor>bg-danger</ImageColor>
+    <ImageText>FIRE OPAL</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>fire</Tag>
+      <Tag>opal</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>5 elements</Tag>
+    </Tags>
+    <StockQuantity>5</StockQuantity>
+  </Product>
+  <Product>
+    <Id>15</Id>
+    <Name>1.80 MM ROUND 50 PIECES NATURAL AQUA BLUE OPAL [5 ELEMENTS COLLECTION]</Name>
+    <Description>Serene aqua blue opal gemstones from our exclusive 5 Elements Collection.</Description>
+    <Price>22.99</Price>
+    <ImageColor>bg-info</ImageColor>
+    <ImageText>AQUA BLUE OPAL</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>aqua</Tag>
+      <Tag>blue</Tag>
+      <Tag>opal</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>5 elements</Tag>
+    </Tags>
+    <StockQuantity>8</StockQuantity>
+  </Product>
+  <Product>
+    <Id>16</Id>
+    <Name>2.20 MM ROUND 35 PIECES NATURAL FOREST GREEN OPAL [5 ELEMENTS COLLECTION]</Name>
+    <Description>Rich forest green opal gemstones from our exclusive 5 Elements Collection.</Description>
+    <Price>23.99</Price>
+    <ImageColor>bg-success</ImageColor>
+    <ImageText>FOREST GREEN OPAL</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>forest</Tag>
+      <Tag>green</Tag>
+      <Tag>opal</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>5 elements</Tag>
+    </Tags>
+    <StockQuantity>6</StockQuantity>
+  </Product>
+  <Product>
+    <Id>17</Id>
+    <Name>1.90 MM ROUND 45 PIECES NATURAL BLACK ONYX [UNDERWORLD COLLECTION]</Name>
+    <Description>Mysterious black onyx gemstones from our exclusive Underworld Collection.</Description>
+    <Price>18.99</Price>
+    <ImageColor>bg-dark</ImageColor>
+    <ImageText>BLACK ONYX</ImageText>
+    <IsDarkText>false</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>black</Tag>
+      <Tag>onyx</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>underworld</Tag>
+    </Tags>
+    <StockQuantity>12</StockQuantity>
+  </Product>
+  <Product>
+    <Id>18</Id>
+    <Name>2.10 MM ROUND 40 PIECES NATURAL GOLDEN AMBER [GREEK GODS COLLECTION]</Name>
+    <Description>Radiant golden amber gemstones from our exclusive Greek Gods Collection.</Description>
+    <Price>21.99</Price>
+    <ImageColor>bg-warning</ImageColor>
+    <ImageText>GOLDEN AMBER</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>golden</Tag>
+      <Tag>amber</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>greek gods</Tag>
+    </Tags>
+    <StockQuantity>9</StockQuantity>
+  </Product>
+  <Product>
+    <Id>19</Id>
+    <Name>1.70 MM ROUND 60 PIECES NATURAL SILVER PEARL [GREEK GODS COLLECTION]</Name>
+    <Description>Lustrous silver pearl gemstones from our exclusive Greek Gods Collection.</Description>
+    <Price>25.99</Price>
+    <ImageColor>bg-secondary</ImageColor>
+    <ImageText>SILVER PEARL</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Tags>
+      <Tag>silver</Tag>
+      <Tag>pearl</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+      <Tag>greek gods</Tag>
+    </Tags>
+    <StockQuantity>7</StockQuantity>
+  </Product>
+  <!-- This product is in both Featured and Signature categories -->
+  <Product>
+    <Id>20</Id>
+    <Name>3.00 MM ROUND 25 PIECES PREMIUM RAINBOW MOONSTONE [SPECIAL EDITION]</Name>
+    <Description>Exceptional rainbow moonstone gemstones with stunning adularescence and play of colors. Limited special edition.</Description>
+    <Price>34.99</Price>
+    <ImageColor>bg-info</ImageColor>
+    <ImageText>RAINBOW MOONSTONE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Categories>
+      <Category>Featured</Category>
+    </Categories>
+    <Tags>
+      <Tag>rainbow</Tag>
+      <Tag>moonstone</Tag>
+      <Tag>premium</Tag>
+      <Tag>special edition</Tag>
+      <Tag>limited</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+    </Tags>
+    <StockQuantity>5</StockQuantity>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+  </Product>
+</Products>
