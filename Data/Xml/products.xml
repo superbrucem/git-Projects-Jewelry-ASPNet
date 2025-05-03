@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Products>
   <Product>
     <Id>1</Id>
     <Name>1.00 MM ROUND 100 PIECES BRILLIANT AAA+ NATURAL CHROME GREEN DIOPSIDE [FLAWLESS-VVS] - UPDATED</Name>
-    <Description>High quality natural chrome green diopside gemstones with brilliant cut. Limited stock available!</Description>
+    <Description>High quality natural chrome green diopside gemstones with brilliant cut. Limited stock afvailable!</Description>
     <Price>9.99</Price>
     <ImageColor>bg-secondary</ImageColor>
     <ImageText>GREEN DIOPSIDE</ImageText>
@@ -374,12 +374,35 @@
     </Tags>
     <StockQuantity>7</StockQuantity>
   </Product>
-  <!-- This product is in both Featured and Signature categories -->
   <Product>
     <Id>20</Id>
     <Name>3.00 MM ROUND 25 PIECES PREMIUM RAINBOW MOONSTONE [SPECIAL EDITION]</Name>
     <Description>Exceptional rainbow moonstone gemstones with stunning adularescence and play of colors. Limited special edition.</Description>
     <Price>34.99</Price>
+    <ImageColor>bg-info</ImageColor>
+    <ImageText>RAINBOW MOONSTONE</ImageText>
+    <IsDarkText>true</IsDarkText>
+    <Category>Signature</Category>
+    <Categories>
+      <Category>Featured</Category>
+    </Categories>
+    <Tags>
+      <Tag>rainbow</Tag>
+      <Tag>moonstone</Tag>
+      <Tag>premium</Tag>
+      <Tag>special edition</Tag>
+      <Tag>limited</Tag>
+      <Tag>natural</Tag>
+      <Tag>round</Tag>
+    </Tags>
+    <StockQuantity>5</StockQuantity>
+    <VideoUrl>https://youtu.be/dQw4w9WgXcQ</VideoUrl>
+  </Product>
+  <Product>
+    <Id>21</Id>
+    <Name>3.00 MM ROUND 25 PIECES PREMIUM RAINBOW MOONSTONE [SPECIAL EDITION]</Name>
+    <Description>Exceptional rainbow moonstone gemstones with stunning adularescence and play of colors. Limited special edition.</Description>
+    <Price>56.99</Price>
     <ImageColor>bg-info</ImageColor>
     <ImageText>RAINBOW MOONSTONE</ImageText>
     <IsDarkText>true</IsDarkText>
